@@ -70,4 +70,11 @@ formFilme.addEventListener("submit", async (event)=>{
     const titulo = (document.getElementById("titulo")as HTMLInputElement).value;
     const diretor = (document.getElementById("diretor")as HTMLInputElement).value;
     const genero = (document.getElementById("genero")as HTMLInputElement).value;
+    const ano =  parseInt ((document.getElementById("ano")as HTMLInputElement).value);
+    if(titulo && diretor && genero && ano){
+        await cadastrarFilme({ titulo, diretor , genero ,ano})
+        formFilme.reset();
+    }
 });
+
+document.addEventListener("DOMContentLoaded", RenderizarFilmes)
